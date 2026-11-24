@@ -1,0 +1,21 @@
+[server]
+headless = true
+
+[theme]
+base = "light"
+font = "monospace"
+baseRadius = "none"
+
+[theme.light]
+primaryColor = "#0e7c86"
+backgroundColor = "#f6f2e9"
+secondaryBackgroundColor = "#ebe4d3"
+textColor = "#1c2b30"
+borderColor = "#c9bfa6"
+
+[theme.dark]
+primaryColor = "#2dd4bf"
+backgroundColor = "#0a1119"
+secondaryBackgroundColor = "#111d2a"
+textColor = "#e4ecf1"
+borderColor = "#24384a"
