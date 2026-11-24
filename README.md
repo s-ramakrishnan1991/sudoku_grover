@@ -45,7 +45,7 @@ Other features:
 * **Random easy puzzles.** Each puzzle has 3 clues placed anywhere on the grid. *Draw a random puzzle* gives a new one.
 * **Adjustable shots** (256 to 8192).
 * **Seven noisy backends plus two ideal references**, all credential-free and local.
-* **A different look from the marked-state app:** top navigation, light "lab notebook" theme (monospace type, square
+* **UI:** top navigation, light "lab notebook" theme (monospace type, square
   corners, teal accent) with a dark variant.
 * **Cached simulations**, so repeated runs of the same puzzle, backend and shot count return instantly.
 
