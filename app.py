@@ -11,6 +11,14 @@ from views import about, arena_page, hardware, lab, oracle  # noqa: E402
 state.ensure()
 ui.inject_css()
 
+# Keep credentials and hardware settings alive for the whole browser session. Streamlit drops the value of a
+# widget that is not drawn in a run (another provider selected, another page open); re-assigning the value at the
+# top of every run stops that. The values stay in this session's memory only and are never stored or logged.
+for _k in ("ibm_token", "ibm_crn", "iqm_token", "iqm_url", "iqm_computer", "iqm_custom", "ionq_token",
+           "ionq_backend", "ionq_target", "ionq_noise", "hw_provider", "hw_ack"):
+    if _k in st.session_state:
+        st.session_state[_k] = st.session_state[_k]
+
 pages = [
     st.Page(lab.render, title="Lab", icon="🧪", url_path="lab", default=True),
     st.Page(oracle.render, title="Oracle anatomy", icon="🔬", url_path="oracle"),

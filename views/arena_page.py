@@ -10,7 +10,7 @@ import ui
 def hardware_rows(items, iters):
     out = []
     for r in st.session_state.get("hw_results", {}).values():
-        if r["fixed_items"] == items and r["iters"] == iters:
+        if r.get("analysis") and r["fixed_items"] == items:
             a = r["analysis"]
             out.append({"name": f"{r['provider']} · {r['backend']}", "family": "Real hardware" if r.get("kind", "Real hardware") == "Real hardware" else r.get("kind"),
                         "success": a["success"], "best_valid": a["best_valid"], "two_q": r["metrics"]["2Q gates"] if r.get("metrics") else 0,
